@@ -1,3 +1,17 @@
+#upload
+cd pythonT/Git/upload/test
+git add Gitsetup.txt
+git commit -m "git setup"
+git remote rm origin #再次上传时使用
+git remote add origin git@github.com:Christal0922/test.git
+git checkout -b feature-D
+git push -u origin feature-D
+
+#download
+cd F:/PythonT/Git/repository
+git clone git@github.com:Christal0922/Rscript.git
+
+
 #Basic setup
 git config --global user.name "Christal Ge"
 git config --global user.email "qian920922@163.com"
@@ -37,6 +51,7 @@ git checkout master
 git reset --hard bdfe865
 
 #推送至远程仓库
+git remote rm origin #再次上传时
 git remote add origin git@github.com:Christal0922/test.git
 #在网页建立名为test的repository
 #推送至master branch
