@@ -1,0 +1,67 @@
+#upload
+cd pythonT/Git/upload/test
+git add Gitsetup.txt
+git commit -m "git setup"
+git remote rm origin #再次上传时使用
+git remote add origin git@github.com:Christal0922/test.git
+git checkout -b feature-D
+git push -u origin feature-D
+
+#download
+cd F:/PythonT/Git/repository
+git clone git@github.com:Christal0922/Rscript.git
+
+
+#Basic setup
+git config --global user.name "Christal Ge"
+git config --global user.email "qian920922@163.com"
+git config --global color.ui auto
+#setup ssh key
+ssh-keygen -t rsa -C "qian920922@163.com"
+
+#upload
+cd F:/PythonT/Git/upload
+mkdir test
+cd test
+cd F:/PythonT/Git/upload
+#查看仓库状态
+git status
+git add jupyter_setup.txt
+git commit -m "First commit"
+#查看提交日志
+git log
+git log --graph
+#查看分支
+git branch
+git checkout -b feature-A
+git add hello.py
+git commit -m "feature-A commit"
+git checkout master
+#合并feature-A branch
+git merge --no-ff feature-A
+#:q 退出vim编辑器
+#更改提交的操作, 哈希值
+git reset --hard bdfe865e12d2d80a0b0ea1c1bbefc2fe1fc4bc60
+git checkout -b fix-B
+git add jupyter_setup.txt
+git commit -m "Fix B"
+#查看当前仓库执行过的操作的日志
+git reflog
+git checkout master
+git reset --hard bdfe865
+
+#推送至远程仓库
+git remote rm origin #再次上传时
+git remote add origin git@github.com:Christal0922/test.git
+#在网页建立名为test的repository
+#推送至master branch
+git push -u origin master
+#推送至master以外的分支
+git checkout -b feature-D
+git push -u origin feature-D
+#修复
+git pull --rebase origin master #远程库与本地库代码不一致导致#指令意思就是把远程库中的跟新合并到本地库中（可能存在冲突需要解决），--rebase的作用是取消本地库中刚刚提交的commit，并把他们接到更新后的版本库中。
+
+#download
+cd F:/PythonT/Git/repository
+git clone git@github.com:Christal0922/Rscript.git
